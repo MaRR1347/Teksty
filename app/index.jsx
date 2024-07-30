@@ -17,7 +17,7 @@ const Index = () => {
   const { isLogged, setIsLogged } = useContext(LoggedContext);
   const [password, setPassword] = useState('');
 
-  if(isLogged) return <Redirect href="/songView"/>
+  if(isLogged) return <Redirect href="/songView" push/>; 
 
   function checkPassword() {
     if (password == "") setIsLogged(true)
@@ -42,7 +42,7 @@ const Index = () => {
       </TouchableOpacity>
 
 
-      <TouchableOpacity onPress={() => { router.replace("home") }}>
+      <TouchableOpacity onPress={() => { router.push("home") }}>
         <Text>coś</Text>
       </TouchableOpacity>
     </View>

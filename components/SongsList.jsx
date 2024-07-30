@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOp, TouchableOpacityacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import * as Filesystem from 'expo-file-system';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -22,11 +22,12 @@ const SongsList = () => {
       >
         <FlatList
           data={songsList}
-          renderItem={({ item }) => (<Text>{item}</Text>)}
+          renderItem={({ item }) => (<TouchableOpacity onPress={()=>{setCurrentSong(item)}}><Text>{item}</Text></TouchableOpacity>)} //DODAĆ funkcję w customowym przycisku i zobaczyć rpzez onpress={this.funkcja} czy zadziała
           keyExtractor={(item) => item}
         />
       </View>
 
+        <TouchableOpacity onPress={()=>{console.log(currentSong)}}><Text>pokaż</Text></TouchableOpacity>
 
       <Text>
       </Text>

@@ -136,7 +136,7 @@ const List = () => {
 
         {/* <Text>{JSON.stringify(files).split(',').map((el)=>(el.replace("\"", "").replace(".txt\"", ""))).join("\n")}</Text> */}
 
-        <View style={{overflow: 'scroll', height: 'auto'}}>
+        <View style={{overflow: 'scroll', height: 400}}>
           <Text>Znaleziono {songData.length} piosenek</Text>
           <FlatList
             style={{
@@ -144,7 +144,7 @@ const List = () => {
               flexWrap: "wrap"
             }}
             data={songData}
-            renderItem={({ item, index }) => (<Text>{index}. {item}</Text>)}
+            renderItem={({ item, index }) => (<Text>{index+1}. {item}</Text>)}
             keyExtractor={(item) => item}
           />
         </View>
